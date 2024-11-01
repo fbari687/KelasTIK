@@ -1,0 +1,191 @@
+body {
+    font-family: "Poppins";
+}
+
+a {
+    text-decoration: none;
+    color: #242424;
+}
+
+.modal .form-label {
+    font-size: 18px;
+}
+
+.text-dark {
+    color: #242424;
+}
+
+.navbar {
+    background-color: #f4f4f4;
+}
+
+.navbar.blur {
+    backdrop-filter: blur(10px);
+    transition: backdrop-filter 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0a4191;
+}
+
+.nav-item {
+    margin: 0 20px;
+}
+
+.btn {
+    border-radius: 120px;
+    padding: 10px 20px;
+}
+
+.btn-primary {
+    background-color: #0a4191;
+    border: none;
+}
+
+.btn-outline-primary {
+    border: 1px solid #0a4191;
+    color: #242424;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0a4191;
+}
+
+.btn-primary:hover {
+    background-color: #05224d;
+}
+
+.svg-home {
+    width: 100%;
+}
+
+.card {
+    width: 100%;
+}
+
+.card-tutors {
+    border: none;
+}
+
+section {
+    padding: 70px 0;
+}
+
+.header {
+    background-color: #f4f4f4;
+    padding: 16px 0;
+    min-height: 600px;
+    margin-top: 80px;
+}
+
+.profile-tutors {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* Tutors */
+
+/* Testimonial */
+.card-testimonial {
+    padding: 30px 10px;
+}
+
+.testimonial-name {
+    font-style: italic;
+}
+
+/* Course */
+#course_list {
+    padding: 140px 0;
+    min-height: 634px;
+}
+
+/* Detail Course */
+#detail {
+    padding: 100px 0;
+    min-height: 700px;
+}
+
+/* Auth */
+#auth {
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding-top: 200px;
+}
+
+/* Utilities */
+.search-input {
+    border-radius: 100px;
+}
+
+.btn-masuk {
+    border: 1px solid #0a4191;
+}
+
+.btn-daftar {
+    border: 1px solid #f6b737;
+    color: #f6b737;
+}
+
+.btn-daftar:hover {
+    background-color: #f6b737;
+    border: 1px solid #f6b737;
+}
+
+.category-section {
+    overflow: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.category-section a {
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.nav-link.active {
+    color: #0a4191;
+    font-weight: 500;
+    border-bottom: 1px solid #0a4191;
+}
+
+.nav-link:hover {
+    color: #0a4191;
+}
+
+/* footer */
+footer {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer a:hover {
+    color: #0a4191;
+}
+
+footer h4 {
+    color: #0a4191;
+}
+/* footer */
+@media only screen and (max-width: 600px) {
+    #statistic-course {
+        text-align: center;
+    }
+
+    #category-button-section {
+        flex-direction: column;
+    }
+}
