@@ -17,14 +17,37 @@
                         <div class="col-md-4 mb-3">
                             <div class="row">
                                 <span>Member</span>
-                                <span class="fw-bold">{{ $course->userCourses->count() }} <span
-                                        class="fw-normal">bergabung</span></span>
+                                <span class="fw-bold">{{ $course->userCourses->count() }}
+                                    <span class="fw-normal">bergabung</span>
+                                </span>
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="row">
-                                <span>Sertifikat</span>
-                                <span><i class="fas fa-check"></i></span>
+                                <span>Level</span>
+                                @if ($course->level == 1)
+                                    <span>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </span>
+                                @elseif($course->level == 2)
+                                    <span>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </span>
+                                @elseif($course->level == 3)
+                                    <span>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </span>
+                                @else
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -60,7 +83,7 @@
                         <!-- @if (Auth::check())
     @if (Auth::user()->enrolledCourses()->where('course_id', $course->id))
     <button type="button" class="btn btn-success w-100">Kamu Telah Mengikuti Kursus
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                Ini</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Ini</button>
 @else
     <button type="submit" class="btn btn-primary w-100">Ambil Kursus</button>
     @endif

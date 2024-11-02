@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="header">
+    <div class="header" id="home-header">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6" data-aos="fade-down">
@@ -196,16 +196,47 @@
                 @else
                     @foreach ($courses as $course)
                         <div class="col-md-3 mt-3">
-                            <div class="card shadow-sm" style="border: none; border-radius: 10px;">
-                                <img src="{{ url('/storage/' . $course->image) }}" class="card-img-top" alt="..."
-                                    width="200" height="200">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ Str::limit($course->title, 24) }}</h5>
-                                    <span class="badge text-bg-success my-2">{{ $course->category->name }}</span>
-                                    <p class="card-text">{!! Str::limit($course->description, 100) !!}</p>
-                                    <a href="/course/{{ $course->slug }}" class="btn btn-primary">Detail Kursus</a>
+                            <a href="/course/{{ $course->slug }}">
+                                <div class="card" style="border: none; border-radius: 10px;">
+                                    <img src="{{ url('/storage/' . $course->image) }}" class="card-img-top"
+                                        alt="..." width="200" height="200">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ Str::limit($course->title, 25) }}</h5>
+                                        <span class="badge text-bg-success">{{ $course->category->name }}</span>
+                                        <p class="card-text my-3">{!! Str::limit($course->description, 100) !!}</p>
+                                        <div>
+                                            <span>Level</span>
+                                            <div>
+                                                @if ($course->level == 1)
+                                                    <span>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                @elseif($course->level == 2)
+                                                    <span>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                @elseif($course->level == 3)
+                                                    <span>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                @else
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <a href="/course/{{ $course->slug }}" class="btn btn-primary mt-3">Detail
+                                            Kursus</a>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 @endif

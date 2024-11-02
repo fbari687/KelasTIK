@@ -4,7 +4,7 @@
     <div class="header py-5" id="profile">
         <div class="container">
             <div class="d-flex flex-column align-items-center gap-3">
-                <img src="{{ url('/storage/' . Auth::user()->image) }}" alt="" class="rounded-circle shadow-sm"
+                <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="" class="rounded-circle shadow"
                     width="250px" height="250px" style="object-fit: cover">
                 <h4>
                     {{ Auth::user()->name }}
@@ -58,20 +58,51 @@
                 @if ($userCourses->isEmpty())
                     <div class="text-center fw-bold">Belum ada kursus yang diikuti</div>
                 @else
+                    {{-- {{ dd($userCourses) }} --}}
                     @foreach ($userCourses as $course)
                         <div class="col-md-3 mt-3">
-                            <div class="card" style="border: none">
-                                <img src="{{ url('/storage/' . $course->detailCourse->image) }}" class="card-img-top"
-                                    alt="..." width="200" height="200">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ Str::limit($course->detailCourse->title, 24) }}</h5>
-                                    <span
-                                        class="badge text-bg-success my-2">{{ $course->detailCourse->category->name }}</span>
-                                    <p class="card-text">{!! Str::limit($course->detailCourse->description, 100) !!}</p>
-                                    <a href="/course/{{ $course->detailCourse->slug }}" class="btn btn-primary">Detail
-                                        Kursus</a>
+                            <a href="/course/{{ $course->detailCourse->slug }}">
+                                <div class="card" style="border: none; border-radius: 10px;">
+                                    <img src="{{ url('/storage/' . $course->detailCourse->image) }}" class="card-img-top"
+                                        alt="..." width="200" height="200">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ Str::limit($course->detailCourse->title, 25) }}</h5>
+                                        <span
+                                            class="badge text-bg-success">{{ $course->detailCourse->category->name }}</span>
+                                        <p class="card-text my-3">{!! Str::limit($course->detailCourse->description, 100) !!}</p>
+                                        <div>
+                                            <span>Level</span>
+                                            <div>
+                                                @if ($course->detailCourse->level == 1)
+                                                    <span>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                @elseif($course->detailCourse->level == 2)
+                                                    <span>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                @elseif($course->detailCourse->level == 3)
+                                                    <span>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                @else
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <a href="/course/{{ $course->slug }}" class="btn btn-primary mt-3">Detail
+                                            Kursus</a>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 @endif

@@ -19,6 +19,10 @@ a {
     background-color: #f4f4f4;
 }
 
+.navbar-collapse.show {
+    padding: 40px 16px;
+}
+
 .navbar.blur {
     backdrop-filter: blur(10px);
     transition: backdrop-filter 0.3s ease;
@@ -55,6 +59,7 @@ a {
 
 .btn-primary:hover {
     background-color: #05224d;
+    outline: #05224d;
 }
 
 .svg-home {
@@ -154,7 +159,7 @@ section {
 .nav-link.active {
     color: #0a4191;
     font-weight: 500;
-    border-bottom: 1px solid #0a4191;
+    /* border-bottom: 1px solid #0a4191; */
 }
 
 .nav-link:hover {
@@ -179,8 +184,22 @@ footer a:hover {
 footer h4 {
     color: #0a4191;
 }
+
+/* Icons */
+.fa-star {
+    color: #f6b737;
+}
+
+.fa-check {
+    color: green;
+}
+
 /* footer */
 @media only screen and (max-width: 600px) {
+    #home-header {
+        padding-top: 100px;
+    }
+
     #statistic-course {
         text-align: center;
     }

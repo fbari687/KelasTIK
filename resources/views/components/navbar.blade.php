@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand font-semibold" href="#">
             <img src="{{ asset('img/logo.png') }}" alt="" width="60">
-            <span class="ms-3">Kelas <span style="color: #f6b737">TIK</span></span>
+            <a href="/"><span class="ms-3">Kelas <span style="color: #f6b737">TIK</span></span></a>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

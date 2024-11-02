@@ -44,9 +44,37 @@
                                     <img src="{{ url('/storage/' . $course->image) }}" class="card-img-top" alt="..."
                                         width="200" height="200">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ Str::limit($course->title, 24) }}</h5>
-                                        <span class="badge text-bg-success my-2">{{ $course->category->name }}</span>
-                                        <p class="card-text">{!! Str::limit($course->description, 100) !!}</p>
+                                        <h5 class="card-title">{{ Str::limit($course->title, 25) }}</h5>
+                                        <span class="badge text-bg-success">{{ $course->category->name }}</span>
+                                        <p class="card-text my-3">{!! Str::limit($course->description, 100) !!}</p>
+                                        <div>
+                                            <span>Level</span>
+                                            <div>
+                                                @if ($course->level == 1)
+                                                    <span>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                @elseif($course->level == 2)
+                                                    <span>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                @elseif($course->level == 3)
+                                                    <span>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                @else
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                @endif
+                                            </div>
+                                        </div>
                                         <a href="/course/{{ $course->slug }}" class="btn btn-primary mt-3">Detail Kursus</a>
                                     </div>
                                 </div>
